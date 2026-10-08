@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Halden — Clothes for the long season</title>
+    <meta name="description" content="Halden makes considered clothing in wool, linen and leather. Autumn / Winter 26 is here." />
+    <meta name="theme-color" content="#f3eee3" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23b4532f'/%3E%3Cpath d='M9 7v18M23 7v18M9 16h14' stroke='%23f3eee3' stroke-width='3'/%3E%3C/svg%3E" />
+    <script>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <!-- Shared SVG defs used by every drawn product -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="grain" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" />
+          <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 -.15" />
+        </filter>
+        <filter id="blur"><feGaussianBlur stdDeviation="6" /></filter>
+        <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0.25">
+          <stop offset="0" stop-color="#000" stop-opacity=".24" />
+          <stop offset=".42" stop-color="#fff" stop-opacity=".1" />
+          <stop offset="1" stop-color="#000" stop-opacity=".3" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div id="page">
+      <div class="bar">
+        <p><strong>Demo storefront.</strong> Every button works. Free delivery over <span data-free-threshold></span>.</p>
+      </div>
+
+      <header class="site-header" id="site-header">
+        <a class="logo" href="#top" aria-label="Halden, home">Halden</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#shop">Shop</a>
+          <a href="#lookbook">Lookbook</a>
+          <a href="#studio">For store owners</a>
+        </nav>
+        <button class="bag-btn" id="open-cart" type="button" aria-haspopup="dialog" aria-controls="drawer">
+          Bag
+          <span class="bag-btn__count" id="cart-count" aria-live="polite" aria-label="0 items">0</span>
+        </button>
+      </header>
+
+      <main id="top">
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero__copy">
+            <p class="eyebrow hero-in" style="--d: 0">Autumn / Winter 26</p>
+            <h1 id="hero-title" class="hero-in" style="--d: 1">
+              Clothes for the <em>long</em> season.
+            </h1>
+            <p class="lede hero-in" style="--d: 2">
+              Wool that has opinions about the weather. Linen that softens with every wash. Eight pieces, made
+              slowly, meant to be worn until they're yours.
+            </p>
+            <div class="hero__cta hero-in" style="--d: 3">
+              <a class="btn" href="#shop">Shop the collection <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="#lookbook">See the lookbook</a>
+            </div>
+          </div>
+
+          <div class="hero__stage hero-in" style="--d: 2">
+            <div class="arch" data-art="field-coat" role="img" aria-label="The Field Coat in chestnut wool"></div>
+
+            <svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
+              <defs><path id="circ" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" /></defs>
+              <text><textPath href="#circ" startOffset="0">New season · New season · New season · </textPath></text>
+              <path d="M44 62 L56 74 L78 46" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <button class="quick" type="button" data-quick-add="field-coat" data-size="M">
+              <span class="quick__thumb" data-art="field-coat" data-thumb aria-hidden="true"></span>
+              <span class="quick__text">
+                <span class="quick__name">Field Coat</span>
+                <span class="quick__price" data-price="field-coat"></span>
+              </span>
+              <span class="quick__plus" aria-hidden="true">+</span>
+              <span class="visually-hidden">Add Field Coat, size M, to bag</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span>Undyed wool</span><span>Deadstock linen</span><span>Vegetable-tanned leather</span
+            ><span>Made in small runs</span><span>Thirty-day returns</span><span>Repairs for life</span>
+            <span>Undyed wool</span><span>Deadstock linen</span><span>Vegetable-tanned leather</span
+            ><span>Made in small runs</span><span>Thirty-day returns</span><span>Repairs for life</span>
+          </div>
+        </div>
+
+        <!-- SHOP -->
+        <section class="shop" id="shop" aria-labelledby="shop-title">
+          <header class="section-head reveal">
+            <div>
+              <p class="eyebrow">The collection</p>
+              <h2 id="shop-title">Eight pieces for <em>cold mornings.</em></h2>
+            </div>
+            <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+          </header>
+          <div class="grid" id="grid"></div>
+          <p class="sr-status visually-hidden" id="grid-status" aria-live="polite"></p>
+        </section>
+
+        <!-- LOOKBOOK -->
+        <section class="lookbook" id="lookbook" aria-labelledby="look-title">
+          <div class="lookbook__head reveal">
+            <p class="eyebrow">Lookbook</p>
+            <h2 id="look-title">The <em>Wool</em> Edit</h2>
+            <p>
+              Three ways we wear the season: layered, quiet and warm enough to forget the forecast. Every colour is
+              chosen to sit beside the others.
+            </p>
+            <a class="text-link text-link--light" href="#shop">Shop the looks</a>
+          </div>
+          <ul class="looks">
+            <li class="look reveal" style="--lift: 0">
+              <div class="look__art" data-art="rib-crew"></div>
+              <p><span>Look 01</span> Rib Knit Crew</p>
+            </li>
+            <li class="look reveal" style="--lift: 1">
+              <div class="look__art" data-art="field-coat"></div>
+              <p><span>Look 02</span> Field Coat</p>
+            </li>
+            <li class="look reveal" style="--lift: 2">
+              <div class="look__art" data-art="merino-scarf"></div>
+              <p><span>Look 03</span> Merino Scarf</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- FOR STORE OWNERS -->
+        <section class="studio" id="studio" aria-labelledby="studio-title">
+          <div class="studio__intro reveal">
+            <p class="eyebrow eyebrow--rust">For store owners</p>
+            <h2 id="studio-title">You're standing in the <em>storefront.</em> Here's what's already working.</h2>
+          </div>
+          <ol class="features">
+            <li class="reveal">
+              <span class="features__n">01</span>
+              <div>
+                <h3>A bag that remembers</h3>
+                <p>Add something, reload the page. It's still there. Quantities, sizes and totals included.</p>
+                <button class="text-link" type="button" data-try-bag>Try it: add the Field Coat</button>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="features__n">02</span>
+              <div>
+                <h3>Free-delivery nudges</h3>
+                <p>The bag tells shoppers how far they are from free shipping, which is the cheapest upsell there is.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="features__n">03</span>
+              <div>
+                <h3>Filtering without a reload</h3>
+                <p>Pick a category and the collection rearranges itself in place. Nothing flashes, nothing jumps.</p>
+                <a class="text-link" href="#shop">Try it on the collection</a>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="features__n">04</span>
+              <div>
+                <h3>Phones first</h3>
+                <p>Open this on your phone. Nothing is cropped, nothing needs pinching, and the bag is one thumb away.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="features__n">05</span>
+              <div>
+                <h3>Yours to restyle</h3>
+                <p>Brand, currency, products and prices live in one file. Colours and type live in one more.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="news" aria-labelledby="news-title">
+          <div class="news__inner reveal">
+            <h2 id="news-title">Ten percent off, <em>once.</em></h2>
+            <p>Then only news worth sending: new drops, restocks and the occasional repair workshop.</p>
+            <form class="news__form" id="news-form" novalidate>
+              <label class="visually-hidden" for="email">Email address</label>
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required />
+              <button class="btn" type="submit">Send me the code</button>
+              <p class="news__msg" id="news-msg" role="status"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__cols">
+          <div>
+            <h3>Shop</h3>
+            <a href="#shop">All pieces</a>
+            <a href="#shop" data-filter-link="Outerwear">Outerwear</a>
+            <a href="#shop" data-filter-link="Knitwear">Knitwear</a>
+            <a href="#shop" data-filter-link="Accessories">Accessories</a>
+          </div>
+          <div>
+            <h3>Studio</h3>
+            <a href="#lookbook">Lookbook</a>
+            <a href="#studio">For store owners</a>
+          </div>
+          <div>
+            <h3>Help</h3>
+            <span>Delivery in 2–4 days</span>
+            <span>Free returns for 30 days</span>
+            <span>Repairs for life</span>
+          </div>
+        </div>
+        <p class="footer__word" aria-hidden="true">Halden</p>
+        <p class="footer__fine">Halden is a fictional brand. This is a demo storefront, not a real shop.</p>
+      </footer>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div class="scrim" id="scrim" hidden></div>
+    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+      <header class="drawer__head">
+        <h2 id="drawer-title">Your bag <span id="drawer-count"></span></h2>
+        <button class="drawer__close" id="close-cart" type="button" aria-label="Close bag">Close</button>
+      </header>
+      <div class="ship" id="ship"></div>
+      <div class="drawer__body" id="drawer-body"></div>
+      <footer class="drawer__foot" id="drawer-foot"></footer>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
